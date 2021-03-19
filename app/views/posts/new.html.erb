@@ -1,0 +1,21 @@
+<div class="main posts-new">
+  <div class="container">
+    <h1 class="form-heading">新問題を投稿する</h1>
+    <%= form_tag("/posts/create") do %>
+      <div class="form">
+        <div class="form-body">
+          <P>タイトル</P>    
+          <input name="title">
+          <p>日本文</p>
+          <textarea name="content_ja"></textarea>
+          <P>英文</P>
+          <textarea name="content"></textarea>
+          <P>答え</P>
+          <input name="answer">
+          <input type="submit" value="投稿">
+        </div>
+      </div>
+    <!-- end を追加してください -->
+    <%end%>
+  </div>
+</div>

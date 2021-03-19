@@ -1,0 +1,31 @@
+<div class="main posts-show">
+  
+  <div class="container">
+    <div class="posts-show-item">
+      <P>
+        <%= @post.title%>  
+      </P>    
+      <p>
+        <%= @post.content %>
+      </p>
+    </div>
+  </div>
+  
+  <% if @error_message %>
+    <div class="form-error">
+      <%= @error_message %>
+    </div>
+  <% end %>
+  
+  <%= form_tag("/posts/answer") do %>
+  <div class="container">
+   <div class="form">
+      <div class="posts-show-item">
+        <P>回答</P>
+        <input name="answer">
+        <input type="submit" value="投稿">
+      </div>
+    </div>
+  </div>
+  <%end%>
+</div>
