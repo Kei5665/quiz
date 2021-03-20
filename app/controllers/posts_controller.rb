@@ -14,6 +14,7 @@ class PostsController < ApplicationController
     @post = Post.new(
       title: params[:title],
       content: params[:content],
+      content_ja: params[:content_ja],
       answer: params[:answer]
       )
     if @post.save
