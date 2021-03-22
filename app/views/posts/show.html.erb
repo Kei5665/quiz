@@ -15,9 +15,9 @@
     </div>
   </div>
   
-  <% if @error_message %>
+  <% @post.errors.full_messages.each do |message| %>
     <div class="form-error">
-      <%= @error_message %>
+      <%= message %>
     </div>
   <% end %>
   

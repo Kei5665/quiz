@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   end
   
   def show
-    @post = Post.find_by(id:params[:id])
+    @post = Post.find_by(id: params[:id])
   end
   
   def new
@@ -26,12 +26,14 @@ class PostsController < ApplicationController
   def answer
     @answer = params[:answer]
     @answer_log = Post.find_by(answer: @answer)
-    
+
     if @answer_log
     flash[:notice] = "正解！"
+    session[:id] = nil
       redirect_to("/posts/index")
     else
-      @error_message = "メールアドレスまたはパスワードが間違っています"
+      @error_message = "間違っています"
+    redirect_to request.referer
     end
   end
   
